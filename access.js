@@ -25,7 +25,7 @@ module.exports.findBookByTitleCached = function(db, redis, title, callback) {
 				if (err || !doc)
 					callback(null);
 				else {
-					\\Book found in database, save to cache and return to client
+					//Book found in database, save to cache and return to client
 					redis.set(title, JSON.stringify(doc), function() {
                         callback(doc);
                     });
